@@ -1,0 +1,51 @@
+.AppBar {
+    background: #F5F5F5;
+    box-shadow: none;
+}
+
+.tool-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.SearchWrapper {
+    background: #EAF1FB;
+    margin-left: 80px;
+    border-radius: 10px;
+    min-width: 690px;
+    max-width: 720px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.SearchWrapper>input {
+    width: 100%;
+    padding: 0 10px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.Header-logo {
+    width: 50px;
+    margin-left: 10px;
+}
+
+.Header-title {
+    color: gray;
+    white-space: nowrap;
+}
+
+.OptionsWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.OptionsWrapper>svg {
+    margin-left: 20px;
+}
