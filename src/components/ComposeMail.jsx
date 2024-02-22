@@ -63,13 +63,34 @@ const SendButton = styled(Button)({
 });
 
 const ComposeMail = ({ openDialog, setOpenDialog }) => {
+
+  const config = {
+    Host: 'smtp.elasticemail.com',
+    Username: 'urvishpatel@yopmail.com',
+    Password: '1DD0766B9DC893D9A677B0209E42E0AE02F6',
+    Port: 2525
+  }
+
   const closeComponentMail = (e) => {
     e.preventDefault();
     setOpenDialog(false);
   };
 
-  const sendMail = () => {
-    setOpenDialog(false);
+  const sendMail = (e) => {
+    e.preventDefault();
+
+    if (window.Email) { //email is attach with window so that why we do first we check window.email is there or not 
+      window.Email.send({
+        ...config,
+        To: 'urvishpatel192011@gmail.com',
+        From: 'urvishpatel192011@gmail.com',
+        Subject: "This is the subject",
+        Body: "And this is the body"
+      }).then(
+        message => alert(message)
+      );
+      setOpenDialog(false);
+    }
   };
   return (
     <div>
@@ -94,8 +115,8 @@ const ComposeMail = ({ openDialog, setOpenDialog }) => {
         />
         <Footer>
           <SendButton
-            onClick={() => {
-              sendMail();
+            onClick={(e) => {
+              sendMail(e);
             }}
           >
             Send
